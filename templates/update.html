@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8" />
+    <title>Update Entry</title>
+  </head>
+  <body>
+  <a href="{{ url_for('home') }}">Home</a>
+  <p>Book Name: {{ book.title }}</p>
+  <p>Current Rating: {{ book.rating }}</p>
+  <form action="{{ url_for('update', book_id=book.id) }}" method='POST'>
+     <input type="text" name="rating" placeholder="New Rating">
+      <button type="submit"> Change Rating </button>
+  </form>
+
+<!--    {% if not books %}-->
+<!--      <p> Library is empty</p>-->
+<!--    {% else %}-->
+<!--      <ul>-->
+<!--        {% for book in books %}-->
+<!--        <li>{{ book.title }} - {{ book.author }} - {{ book.rating }} <a href="{{ url_for('update', entry=book) }}"></a></li>-->
+<!--        {% endfor %}-->
+<!--      </ul>-->
+<!--    {% endif %}-->
+  </body>
+
+</html>
